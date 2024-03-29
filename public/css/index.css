@@ -1,0 +1,18 @@
+body{
+    background-color: black;
+    color: wheat;
+}
+h1{
+    text-align: center;
+}
+
+.box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    input{
+        width: 40%;
+        align-items: center;
+    }
+}

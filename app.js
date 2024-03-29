@@ -27,8 +27,12 @@ const httpServer = app.listen(8080, ()=>{
 });
 
 //INICIO SOCKET
-const io = new Server(httpServer);
+const io = new Server(httpServer); 
 
 io.on("connection", socket =>{
     console.log("Nuevo cliente conectado: ", socket.id);
+
+    socket.on("message", data =>{
+        console.log(data);
+    })
 })
