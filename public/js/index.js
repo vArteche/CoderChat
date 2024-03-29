@@ -2,6 +2,7 @@
 const socket = io();
 let user;
 let chatBox = document.querySelector('#chatBox');
+let messagesLogs = document.querySelector('#messagesLogs')
 
 Swal.fire({
     title: "Identifícate",
@@ -28,4 +29,14 @@ chatBox.addEventListener('keypress', e =>{
             chatBox.value= "";
         }
     }
+})
+
+socket.on('messagesLogs', data =>{
+    let messages= '';
+
+    data.forEach(chat => {
+        messages += `${chat.user} dice: ${chat.message} </br>`
+    });
+
+    messagesLogs.innerHTML= messages;
 })

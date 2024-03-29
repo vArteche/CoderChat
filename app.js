@@ -29,10 +29,15 @@ const httpServer = app.listen(8080, ()=>{
 //INICIO SOCKET
 const io = new Server(httpServer); 
 
+let messages = [];
+
+
 io.on("connection", socket =>{
     console.log("Nuevo cliente conectado: ", socket.id);
 
     socket.on("message", data =>{
-        console.log(data);
+        messages.push(data);
+        io.emit('messagesLogs', messages)
+        console.log(data.message);
     })
 })
