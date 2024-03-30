@@ -3,8 +3,8 @@ import handlebars from 'express-handlebars';
 import { Server } from 'socket.io'; //SERVER PROPIO DE WS
 import path from 'path';
 
-import __dirname from './utils.js';
-import viewsRouter from './src/routes/views.router.js';
+import __dirname from '../utils.js';
+import viewsRouter from './routes/views.router.js';
 
 const app = express();
 //INICIO DEL MOTOR DE PLANTILLAS
